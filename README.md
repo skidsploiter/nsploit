@@ -1,4 +1,5 @@
 # N-Sploit
+![GitHub stars](https://img.shields.io/github/stars/nsploit/nsploit?style=for-the-badge)
 
 This is the official and latest source code of **N-Sploit**. Brought to you by the developers behind the software. This repository was created to provide a central, safe, and malware-free location for accessing and reviewing the code.
 
