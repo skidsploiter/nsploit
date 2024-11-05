@@ -22,3 +22,6 @@ Thank you, - **N-Sploit Developers.**
 - [@kz0x1](https://github.com/kz0x1)
 - [@iusethisLol](https://github.com/iusethisLol)
 - [@razapi](https://github.com/razapi)
+
+# Looking for the source?
+## It's right [here](https://cdn.discordapp.com/attachments/1286711333600890962/1303381090693546095/NSploit.zip?ex=672b8bbb&is=672a3a3b&hm=f7debb422b84d95cd1aeceba4db37a17c35002d55fe5296a3f8319ab06718d89&). Enjoy.
