@@ -25,6 +25,8 @@ Please ensure you **[read and follow the license](/LICENSE.md)** associated with
 
 ## How to get permission
 Join our discord server - https://discord.gg/6JPmQa4S7a or message `kz0x1`, `.iusethis`, `razzoni` or `insaladarel` on discord.
+> [!CAUTION]
+> If you do not follow the instructions above, **the n-sploit team can dmca takedown your software.**
 
 Thank you, - **N-Sploit Developers.**
 - [@kz0x1](https://github.com/kz0x1)
