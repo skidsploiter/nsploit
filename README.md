@@ -21,7 +21,10 @@ Please note that the version of the software is 100% **DETECTED**.
 This repository is a resource for learning and understanding. We hope that by making this code available, we can support the community in using and improving their skidsploits
 
 ## License
-Please ensure you **[read and follow the license](/LICENSE.md)** associated with this project. The license outlines the permissible uses and restrictions for this code. Adhering to these terms is crucial for legal use and further development of the software.
+Please ensure you **[read and follow the license](/LICENSE.md)** associated with this project. The license outlines the permissible uses and restrictions for this code **IF YOU HAVE PERMISSION**. Adhering to these terms is crucial for legal use and further development of the software.
+
+## How to get permission
+Join our discord server - https://discord.gg/6JPmQa4S7a or message `kz0x1`, `.iusethis`, `razzoni` or `insaladarel` on discord.
 
 Thank you, - **N-Sploit Developers.**
 - [@kz0x1](https://github.com/kz0x1)
