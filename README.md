@@ -35,5 +35,7 @@ Thank you, - **N-Sploit Developers.**
 
 # Looking for the source?
 ## It's right [here](https://cdn.discordapp.com/attachments/1286711333600890962/1303381090693546095/NSploit.zip?ex=672cdd3b&is=672b8bbb&hm=47a049f69477388bf2c1e3048e318263163ef9cb853adfd1816fad8e66c3444c&). Enjoy.
-
-### If the file is not working, please report it to kz0x1 on discord.
+>[!NOTE]
+>Please ignore the random ass files that iusethis added to the zip.
+>[!NOTE]
+>If the file is not working, please report it to kz0x1 on discord.
