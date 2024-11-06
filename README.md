@@ -2,6 +2,9 @@
 ![GitHub stars](https://img.shields.io/github/stars/nsploit/nsploit?style=for-the-badge)
 # https://discord.gg/6JPmQa4S7a
 
+### ENV is now open-sourced too!
+### [env.lua](env.lua)
+
 This is the official and latest source code of **N-Sploit**. Brought to you by the developers behind the software. This repository was created to provide a central, safe, and malware-free location for accessing and reviewing the code.
 
 ## Disclaimer
