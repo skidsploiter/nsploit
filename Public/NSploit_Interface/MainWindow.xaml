@@ -1,0 +1,192 @@
+﻿<Window x:Class="Interface.MainWindow"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Interface"
+        mc:Ignorable="d"
+        Title="Alyx" Height="570" Width="1100" Background="Transparent" WindowStyle="None" MouseLeftButtonDown="Titlebar_LBD" AllowsTransparency="True" Closing="Window_Closing" Topmost="True">
+    <Border Background="#0B0B0B" CornerRadius="12">
+        <Grid>
+            <Border x:Name="Titlebar" Background="Transparent" VerticalAlignment="Top">
+                <Grid>
+                    <Grid x:Name="Controls" Margin="29,22,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="6"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="6"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="Close" Click="Control_LBU" Style="{DynamicResource Titlebar}" Background="#F45A55" Opacity="0.61" Grid.Column="0" Height="10" Width="10"/>
+                        <Button x:Name="Minimize" Click="Control_LBU" Style="{DynamicResource Titlebar}" Background="#F6B32E" Opacity="0.61" Grid.Column="2" Height="10" Width="10"/>
+                        <Button x:Name="Maximize" Click="Control_LBU" Style="{DynamicResource Titlebar}" Background="#26BA3E" Opacity="0.61" Grid.Column="4" Height="10" Width="10"/>
+                    </Grid>
+
+                    <TextBlock FontSize="15" Margin="0,15,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"><Run Foreground="#FF818181" Text="N-Sploit"/><Run Text=" "/><Run Foreground="#FF323232" Text="v1.0.2"/></TextBlock>
+                </Grid>
+            </Border>
+
+            <Border x:Name="ScriptList" Background="#0E0E0E" BorderBrush="#1D1D1D" BorderThickness="1" Width="200" Height="432" CornerRadius="12" Margin="29,55,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Grid>
+                    <TextBox x:Name="Search" Style="{DynamicResource TextBox}" Width="182" Height="27" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,9,0,0"/>
+                    <TextBlock Text="EXPLORER" Margin="10,52,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#353535" FontSize="12" FontFamily="{DynamicResource Poppins Semibold}"/>
+                    <TextBlock Text="WORKSPACE" Margin="10,77,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#3C3C3C" FontSize="12" FontFamily="{DynamicResource Poppins Medium}"/>
+                </Grid>
+            </Border>
+
+            <Border x:Name="ScriptControls" Background="#0E0E0E" BorderBrush="#1D1D1D" BorderThickness="1" Width="200" Height="40" CornerRadius="12" Margin="29,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                <Grid>
+                    <Border Height="26" Width="Auto" Padding="8" Background="#141414" CornerRadius="10" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="7,0,0,0">
+                        <TextBlock Text="Connected" x:Name="Status" Foreground="Green" FontFamily="{DynamicResource Poppins Medium}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Button Width="26" Height="26" Margin="0,0,61,0" VerticalAlignment="Center" HorizontalAlignment="Right" Style="{DynamicResource TreeView}">
+                        <Path Width="16" Height="14" Stretch="Uniform" Fill="#4D4D4D" StrokeEndLineCap="Round" StrokeStartLineCap="Round" StrokeLineJoin="Round" Data="M11.8095 5.44444C12.9209 5.44444 13.9868 5.89514 14.7726 6.69738C15.5585 7.49962 16 8.58769 16 9.72222C16 10.8568 15.5585 11.9448 14.7726 12.7471C13.9868 13.5493 12.9209 14 11.8095 14C10.6981 14 9.63228 13.5493 8.84641 12.7471C8.06054 11.9448 7.61905 10.8568 7.61905 9.72222C7.61905 8.58769 8.06054 7.49962 8.84641 6.69738C9.63228 5.89514 10.6981 5.44444 11.8095 5.44444ZM11.8095 7L11.741 7.00544C11.6648 7.01964 11.5948 7.05716 11.54 7.11302C11.4853 7.16887 11.4486 7.24041 11.4347 7.31811L11.4286 7.38889V9.33333H9.52229L9.45371 9.33956C9.3776 9.35375 9.30752 9.39127 9.2528 9.44713C9.19809 9.50298 9.16133 9.57452 9.14743 9.65222L9.14133 9.72222L9.14743 9.79222C9.16133 9.86993 9.19809 9.94146 9.2528 9.99732C9.30752 10.0532 9.3776 10.0907 9.45371 10.1049L9.52229 10.1111H11.4286V12.0579L11.4347 12.1279C11.4486 12.2056 11.4853 12.2771 11.54 12.333C11.5948 12.3888 11.6648 12.4264 11.741 12.4406L11.8095 12.4468L11.8781 12.4406C11.9542 12.4264 12.0243 12.3888 12.079 12.333C12.1337 12.2771 12.1705 12.2056 12.1844 12.1279L12.1905 12.0579V10.1111L14.0983 10.1119L14.1669 10.1057C14.243 10.0915 14.3131 10.0539 14.3678 9.9981C14.4225 9.94224 14.4592 9.8707 14.4731 9.793L14.4792 9.723L14.4731 9.653C14.4592 9.57519 14.4223 9.50357 14.3675 9.44771C14.3126 9.39184 14.2424 9.35439 14.1661 9.34033L14.0975 9.33411H12.1905V7.38967L12.1844 7.31967C12.1706 7.24182 12.1339 7.17011 12.0792 7.11411C12.0245 7.0581 11.9543 7.02047 11.8781 7.00622L11.8095 7ZM13.5238 1.94444C13.9374 1.94431 14.3371 2.0968 14.6492 2.37381C14.9613 2.65082 15.1647 3.03367 15.2221 3.45178L15.2343 3.57467L15.2381 3.69444V6.07444C14.3636 5.21841 13.212 4.71933 12.0013 4.67169C10.7906 4.62404 9.60474 5.03113 8.66825 5.8159C7.73177 6.60066 7.10958 7.70866 6.91946 8.93019C6.72934 10.1517 6.98447 11.402 7.63657 12.4444H1.71429C1.2799 12.4445 0.861698 12.2762 0.544188 11.9736C0.226678 11.671 0.0335407 11.2566 0.00380962 10.8142L1.29514e-08 10.6944V5.05478L4.72914 5.05556L4.87848 5.04856C5.17617 5.02216 5.46193 4.91679 5.70743 4.74289L5.82629 4.64956L9.00648 1.94444H13.5238ZM4.72914 0C5.07962 0 5.42095 0.109667 5.70743 0.312667L5.82629 0.406L7.42857 1.76789L5.09486 3.75356L5.0301 3.801C4.96284 3.84383 4.8876 3.8719 4.80914 3.88344L4.72838 3.88889L1.29514e-08 3.88811V1.75C-5.335e-05 1.30657 0.164797 0.87965 0.461234 0.555525C0.757671 0.2314 1.16359 0.0342394 1.59695 0.00388898L1.71429 0H4.72914Z"/>
+                    </Button>
+
+                    <Button Width="26" Height="26" Margin="0,0,35,0" VerticalAlignment="Center" HorizontalAlignment="Right" Style="{DynamicResource TreeView}">
+                        <Path Width="14" Height="14" Stretch="Uniform" Fill="#4D4D4D" StrokeEndLineCap="Round" StrokeStartLineCap="Round" StrokeLineJoin="Round" Data="M7.7 3.85C7.7 3.34441 7.60042 2.84377 7.40694 2.37667C7.21346 1.90957 6.92987 1.48514 6.57236 1.12764C6.21486 0.770133 5.79043 0.486544 5.32333 0.293064C4.85623 0.0995832 4.35559 0 3.85 0C3.34441 0 2.84377 0.0995832 2.37667 0.293064C1.90957 0.486544 1.48514 0.770133 1.12764 1.12764C0.770133 1.48514 0.486544 1.90957 0.293064 2.37667C0.0995832 2.84377 -7.53387e-09 3.34441 0 3.85C1.52153e-08 4.87108 0.405624 5.85035 1.12764 6.57236C1.84965 7.29438 2.82892 7.7 3.85 7.7C4.87108 7.7 5.85035 7.29438 6.57236 6.57236C7.29438 5.85035 7.7 4.87108 7.7 3.85ZM4.2 4.2L4.2007 5.9528C4.2007 6.04563 4.16382 6.13465 4.09819 6.20029C4.03255 6.26592 3.94353 6.3028 3.8507 6.3028C3.75787 6.3028 3.66885 6.26592 3.60321 6.20029C3.53757 6.13465 3.5007 6.04563 3.5007 5.9528V4.2H1.7472C1.65437 4.2 1.56535 4.16313 1.49971 4.09749C1.43407 4.03185 1.3972 3.94283 1.3972 3.85C1.3972 3.75717 1.43407 3.66815 1.49971 3.60251C1.56535 3.53687 1.65437 3.5 1.7472 3.5H3.5V1.75C3.5 1.65717 3.53687 1.56815 3.60251 1.50251C3.66815 1.43687 3.75717 1.4 3.85 1.4C3.94283 1.4 4.03185 1.43687 4.09749 1.50251C4.16313 1.56815 4.2 1.65717 4.2 1.75V3.5H5.9521C6.04493 3.5 6.13395 3.53687 6.19959 3.60251C6.26522 3.66815 6.3021 3.75717 6.3021 3.85C6.3021 3.94283 6.26522 4.03185 6.19959 4.09749C6.13395 4.16313 6.04493 4.2 5.9521 4.2H4.2Z M3.85 8.4C4.66611 8.4001 5.46722 8.18069 6.16939 7.76477C6.87156 7.34886 7.44894 6.75174 7.84103 6.03599C8.23311 5.32024 8.42548 4.51221 8.39795 3.69656C8.37043 2.88092 8.12404 2.08769 7.6846 1.4H11.725C12.3284 1.4 12.907 1.63969 13.3337 2.06633C13.7603 2.49298 14 3.07163 14 3.675V8.4H10.675C10.0716 8.4 9.49298 8.63969 9.06633 9.06633C8.63969 9.49298 8.4 10.0716 8.4 10.675V14H3.675C3.07163 14 2.49298 13.7603 2.06633 13.3337C1.63969 12.907 1.4 12.3284 1.4 11.725V7.6846C2.1312 8.15301 2.98164 8.40134 3.85 8.4Z M13.692 9.45L9.45 13.692V10.675C9.45 9.9988 9.9988 9.45 10.675 9.45H13.692Z"/>
+                    </Button>
+
+                    <Button Width="26" Height="26" Margin="0,0,10,0" VerticalAlignment="Center" HorizontalAlignment="Right" Style="{DynamicResource TreeView}">
+                        <Path Width="12" Height="14" Stretch="Uniform" Fill="#4D4D4D" StrokeEndLineCap="Round" StrokeStartLineCap="Round" StrokeLineJoin="Round" Data="M8.70117 2.75985C8.59408 2.88826 8.5472 3.05026 8.57083 3.21023C8.59445 3.3702 8.68666 3.51506 8.82718 3.61297C9.55485 4.1193 10.1036 4.80975 10.4053 5.59853C10.707 6.38731 10.7482 7.23966 10.524 8.04969C10.2998 8.85972 9.81994 9.59173 9.14407 10.1548C8.4682 10.7178 7.62609 11.0871 6.72238 11.2167L7.19508 10.7844C7.31652 10.6695 7.38372 10.5157 7.3822 10.3561C7.38068 10.1964 7.31057 10.0437 7.18695 9.93078C7.06334 9.81787 6.89612 9.75383 6.72131 9.75245C6.5465 9.75106 6.37809 9.81244 6.25235 9.92336L4.58558 11.4457C4.46059 11.5599 4.39037 11.7147 4.39037 11.8762C4.39037 12.0377 4.46059 12.1925 4.58558 12.3067L6.25235 13.8291C6.37809 13.94 6.5465 14.0014 6.72131 14C6.89612 13.9986 7.06334 13.9345 7.18695 13.8216C7.31057 13.7087 7.38068 13.556 7.3822 13.3964C7.38372 13.2367 7.31652 13.0829 7.19508 12.968L6.63304 12.4553C7.82783 12.3394 8.95699 11.8985 9.87436 11.1898C10.7917 10.4811 11.4551 9.53725 11.7785 8.48036C12.1019 7.42347 12.0705 6.30225 11.6884 5.26183C11.3063 4.22141 10.591 3.30972 9.63523 2.64476C9.49463 2.54695 9.31727 2.50413 9.14212 2.52571C8.96697 2.54729 8.80836 2.63151 8.70117 2.75985ZM7.41442 1.70274L5.74765 0.180402C5.62795 0.0700302 5.46659 0.00561824 5.29659 0.000350496C5.1266 -0.00491725 4.96082 0.0493576 4.83321 0.152066C4.70559 0.254774 4.62578 0.398148 4.61011 0.552841C4.59444 0.707535 4.6441 0.861848 4.74892 0.984196L4.80426 1.04144L5.36629 1.55477C4.19147 1.6689 3.07968 2.09723 2.17027 2.78606C1.26085 3.47488 0.594288 4.39356 0.254122 5.42693C-0.0860431 6.4603 -0.0846737 7.5624 0.258059 8.59506C0.600791 9.62773 1.26964 10.545 2.18076 11.232C2.31754 11.3308 2.49131 11.3768 2.66477 11.36C2.83824 11.3432 2.99759 11.265 3.10864 11.1421C3.21969 11.0193 3.2736 10.8615 3.2588 10.7028C3.244 10.5441 3.16168 10.3969 3.02948 10.293C2.33621 9.77011 1.82301 9.07551 1.55154 8.29266C1.28007 7.50981 1.26189 6.67202 1.49918 5.87996C1.73647 5.0879 2.21914 4.37527 2.88918 3.82772C3.55922 3.28017 4.38813 2.92099 5.27629 2.79334L4.80426 3.22508C4.68469 3.33466 4.61526 3.4817 4.61009 3.63634C4.60492 3.79098 4.66439 3.94162 4.77642 4.05766C4.88845 4.1737 5.04464 4.24645 5.21327 4.26112C5.38189 4.27579 5.55031 4.23129 5.68431 4.13665L5.74698 4.08611L7.41376 2.56377C7.52855 2.45892 7.59751 2.31941 7.60769 2.17142C7.61788 2.02344 7.5686 1.87714 7.46909 1.75998L7.41442 1.70274Z"/>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border Background="#0E0E0E" CornerRadius="12" BorderBrush="#1D1D1D" BorderThickness="1" Width="822" Height="440" Margin="0,0,36,30" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+            <TabControl x:Name="TabControl" Style="{DynamicResource TabControl}" Width="822" Height="486" Margin="0,0,36,30" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+
+            <Button x:Name="Attach" Style="{DynamicResource Attach}" Margin="0,55,123,0" Width="35" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right" Click="Attach_Click"/>
+            <Button x:Name="Execute" Click="Execute_Click" Style="{DynamicResource Execute}" Content="Execute" Margin="0,55,36,0" Width="80" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Button.Effect>
+                    <DropShadowEffect Opacity="0.4" Color="#FF3F6BA7" BlurRadius="14" ShadowDepth="0" RenderingBias="Quality"/>
+                </Button.Effect>
+            </Button>
+
+
+            <Border x:Name="Notification" Visibility="Hidden" Margin="12" VerticalAlignment="Bottom" HorizontalAlignment="Center" CornerRadius="9" Background="#121212" BorderBrush="#1B1B1B" BorderThickness="1" Height="60" Width="500">
+                <Border.Effect>
+                    <DropShadowEffect RenderingBias="Quality" BlurRadius="8" Opacity="0.25" Direction="215" ShadowDepth="2"/>
+                </Border.Effect>
+
+                <Grid>
+                    <TextBlock Text="Fusion" FontSize="15" Margin="15,11,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#929292" FontFamily="{DynamicResource Poppins Semibold}"/>
+                    <TextBlock x:Name="NotificationMessage" FontSize="12" Margin="15,0,0,11" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="#525252" FontFamily="{DynamicResource Poppins Regular}"/>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+
+    <Window.Resources>
+        <Style x:Key="TabControl" TargetType="{x:Type TabControl}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabControl}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <ScrollViewer x:Name="ScrollViewer" MaxWidth="696" HorizontalAlignment="Left" Grid.Row="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
+                                <StackPanel Orientation="Horizontal">
+                                    <ItemsControl>
+                                        <TabPanel x:Name="HeaderPanel" Panel.ZIndex="1" IsItemsHost="True"/>
+                                    </ItemsControl>
+                                    <Button Style="{DynamicResource CreateTab}" Click="AddTab" Width="22" Height="22" Margin="3,2,2,2">
+                                        <Path Height="10" StrokeLineJoin="Round" StrokeEndLineCap="Round" StrokeStartLineCap="Round" Stroke="#4D4D4D" StrokeThickness="1.5" Data="M6 1V11M11 6H1" Stretch="Uniform"/>
+                                    </Button>
+                                </StackPanel>
+                            </ScrollViewer>
+                            <Border Grid.Row="1" BorderThickness="1" BorderBrush="Transparent" Background="Transparent">
+                                <Grid x:Name="ContentPanel" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local" KeyboardNavigation.DirectionalNavigation="Contained">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                                        <ContentPresenter Content="{TemplateBinding SelectedContent}" ContentTemplate="{TemplateBinding SelectedContentTemplate}" ContentStringFormat="{TemplateBinding SelectedContentStringFormat}" ContentSource="SelectedContent" x:Name="PART_SelectedContentHost" Margin="2" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                    </Border>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="Tab" TargetType="TabItem">
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Foreground" Value="#818181"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontFamily" Value="{DynamicResource Poppins Regular}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Grid>
+                            <Border x:Name="TabBackground" Margin="0,0,5,0" Background="#0E0E0E" BorderBrush="#1D1D1D" BorderThickness="1" CornerRadius="12">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Path Data="{StaticResource TabIcon}" Fill="#818181" Margin="12,0,0,0" VerticalAlignment="Center"/>
+
+                                    <ContentPresenter x:Name="ContentSite" Margin="8,0,0,0" Grid.Column="1" VerticalAlignment="Center" ContentSource="Header"/>
+
+                                    <Button Grid.Column="2" Background="Transparent" BorderThickness="0" Margin="14,0" Click="RemoveTab" Style="{DynamicResource NoHover}">
+                                        <Path Data="{StaticResource Close}" Height="7" Width="7" Stretch="Uniform" Stroke="#818181" StrokeThickness="1.2" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"/>
+                                    </Button>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="TabBackground" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.5"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsMouseOver" Value="True"/>
+                                    <Condition Property="IsSelected" Value="False"/>
+                                </MultiTrigger.Conditions>
+                                <MultiTrigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="TabBackground" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#141414" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </MultiTrigger.EnterActions>
+                                <MultiTrigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="TabBackground" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#0E0E0E" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </MultiTrigger.ExitActions>
+                            </MultiTrigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="TabBackground" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#1B1B1B" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter TargetName="TabBackground" Property="Background" Value="#0E0E0E"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+</Window>
