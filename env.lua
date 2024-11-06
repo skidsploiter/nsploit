@@ -1,6 +1,7 @@
 --[[
   // N-Sploit Environment
   // Made by the N-Sploit devs.
+  // (most of it was made by raz <3)
   // If you use this and don't credit us, we can DMCA you.
   // https://discord.gg/FY2UmXhgje
   // - The N-Sploit Developers
