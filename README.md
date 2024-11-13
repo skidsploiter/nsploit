@@ -1,6 +1,7 @@
 # N-Sploit Source - Please star this repo! ⭐
 ![GitHub stars](https://img.shields.io/github/stars/nsploit/nsploit?style=for-the-badge)
 # https://discord.gg/6JPmQa4S7a
+# Credits to riz-ve for creating Xeno, Join discord.gg/getxeno
 
 ### ENV & Website is now open-sourced too!
 ### [env.lua](env.lua)
