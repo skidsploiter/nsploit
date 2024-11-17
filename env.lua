@@ -5,8 +5,6 @@
   // If you use this and don't credit us, we can DMCA you.
   // https://discord.gg/FY2UmXhgje
   // - The N-Sploit Developers
- Extra shit added after env was posted:
-  // - Nigger what the fuck is this env??? this is so shitty 💔
 ]]
 
 identifyexecutor() = function()
