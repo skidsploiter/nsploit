@@ -7,9 +7,12 @@
   // - The N-Sploit Developers
 ]]
 
-identifyexecutor() = function()
-  return 'N-Sploit ENV', '1.1'
-end
+--uncomment if funny
+--identifyexecutor() = function()
+--  return 'N-Sploit ENV', '1.1'
+--end
+
+
 
 checkcaller = function() return true end
 local logserv = game:GetService("LogService")
