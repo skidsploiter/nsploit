@@ -14,7 +14,22 @@
 
 
 
-checkcaller = function() return true end
+function checkcaller()
+    local info = debug.getinfo(2)
+    if not info then
+        return false 
+    end
+    if info.source == "=[C]" then
+        return false  -- because it's checking for internal C checks that sometimes bug out the ENV
+		      -- no that's usually apart of the debug.getinfo part
+		      --it's needed
+                      --like
+                      --HEAVILY HEAVILY needed -raz
+    end
+
+    return true 
+end
+
 local logserv = game:GetService("LogService")
 local cached, ConsoleClone, identity, log = {}, nil, nil, nil
 local cache = {
