@@ -7,11 +7,7 @@
   // - The N-Sploit Developers
 ]]
 
---uncomment if funny
---identifyexecutor() = function()
---  return 'N-Sploit ENV', '1.1'
---end
-
+function identifyexecutor() return 'N-Sploit', 'v3.1' end
 
 
 function checkcaller()
