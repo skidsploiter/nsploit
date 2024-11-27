@@ -7,10 +7,21 @@
   // - The N-Sploit Developers
 ]]
 
+--[[
+CURRENT: ENV Version 14
+]]
+function envver() return '14' end
+
 function identifyexecutor() return 'N-Sploit', 'v3.1' end
 
+getgenv().gethui = function() -- thanks to salad for this
+    local f = Instance.new("Folder")
+    f.name = "N-Sploit HUI"
+    f.parent = game:GetService("CoreGui"):FindFirstChild("RobloxGui")
+    return f
+end
 
-function checkcaller()
+function checkcaller() -- thanks to raz for this
     local info = debug.getinfo(2)
     if not info then
         return false 
