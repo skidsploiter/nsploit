@@ -12,6 +12,13 @@ CURRENT: ENV Version 14
 ]]
 function envver() return '14' end
 
+if envver() != game:HttpGet("https://raw.githubusercontent.com/nsploit/nsploit/refs/heads/main/ver.txt") then
+	warn("[ N-Sploit ] ENV Not Up-to-date, updating...")
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/nsploit/nsploit/refs/heads/main/env.lua"))() 
+	print("✅ Successfully updated ENV.")
+end
+
+
 function identifyexecutor() return 'N-Sploit', 'v3.1' end
 
 getgenv().gethui = function() -- thanks to salad for this
