@@ -10,26 +10,26 @@
 --[[
 CURRENT: ENV Version 14
 ]]
-function envver() return '14' end
+function getver() return '3.1' end
 
 local remoteVersion = game:HttpGet("https://raw.githubusercontent.com/nsploit/nsploit/refs/heads/main/ver.txt")
 
-if envver() ~= remoteVersion then
-    warn("[ N-Sploit ] ENV Not Up-to-date, updating...")
+if getver() ~= remoteVersion then
+    warn("[ N-Sploit ] Not Up-to-date, updating...")
     local success, err = pcall(function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/nsploit/nsploit/refs/heads/main/env.lua"))()
     end)
     if success then
-        print("✅ Successfully updated ENV.")
+        print("✅ Successfully updated.")
 	game:GetService("StarterGui"):SetCore("SendNotification",{
-		Title = "N-Sploit ENV", -- Required
+		Title = "N-Sploit", -- Required
 		Text = "Updated", -- Required
 		Icon = "" -- Optional
 	})
     else
-        warn("❌ Failed to update ENV: " .. err)
+        warn("❌ Failed to update: " .. err)
 	game:GetService("StarterGui"):SetCore("SendNotification",{
-		Title = "N-Sploit ENV", -- Required
+		Title = "N-Sploit", -- Required
 		Text = "Unable to update, check console for details", -- Required
 		Icon = "" -- Optional
 	})
