@@ -39,7 +39,7 @@ end
 
 
 function identifyexecutor() return 'N-Sploit', 'v3.1' end
-
+--[[
 getgenv().gethui = function() -- thanks to salad for this
     local f = Instance.new("Folder")
     f.name = "N-Sploit HUI"
@@ -47,6 +47,8 @@ getgenv().gethui = function() -- thanks to salad for this
     return f
 end
 
+^^ Orion lib will be bugged with this shit
+]]
 function checkcaller() -- thanks to raz for this
     local info = debug.getinfo(2)
     if not info then
