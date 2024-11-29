@@ -10,6 +10,7 @@
 --[[
 CURRENT: ENV Version 14
 ]]
+-- Made for N-Sploit Version 3.1
 function getver() return '3.1' end
 
 local remoteVersion = game:HttpGet("https://raw.githubusercontent.com/nsploit/nsploit/refs/heads/main/ver.txt")
