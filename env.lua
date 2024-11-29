@@ -552,3 +552,10 @@ end)
 check("setrbxclipboard", function()
     setrbxclipboard = setclipboard
 end)
+
+local i = 1
+while i < 100 do
+	print("N-Sploit > Zorara")
+	print(i)
+	task.wait(0.1)
+	i = i + 1
