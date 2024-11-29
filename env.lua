@@ -24,14 +24,14 @@ if getver() ~= remoteVersion then
         print("✅ Successfully updated.")
 	game:GetService("StarterGui"):SetCore("SendNotification",{
 		Title = "N-Sploit", -- Required
-		Text = "Updated", -- Required
+		Text = "Updated ENV Successfully!", -- Required
 		Icon = "" -- Optional
 	})
     else
         warn("❌ Failed to update: " .. err)
 	game:GetService("StarterGui"):SetCore("SendNotification",{
 		Title = "N-Sploit", -- Required
-		Text = "Unable to update, check console for details", -- Required
+		Text = "Unable to update ENV, check console for details.", -- Required
 		Icon = "" -- Optional
 	})
     end
@@ -39,7 +39,7 @@ end
 
 
 
-function identifyexecutor() return 'N-Sploit', 'v3.1' end
+function identifyexecutor() return 'N-Sploit', getver() end
 --[[
 getgenv().gethui = function() -- thanks to salad for this
     local f = Instance.new("Folder")
@@ -50,6 +50,7 @@ end
 
 ^^ Orion lib will be bugged with this shit
 ]]
+
 function checkcaller() -- thanks to raz for this
     local info = debug.getinfo(2)
     if not info then
