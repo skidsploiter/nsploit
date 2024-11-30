@@ -99,7 +99,7 @@ namespace Interface
                 StartInfo = new ProcessStartInfo()
                 {
                     FileName = "taskkill.exe",
-                    Arguments = $"/F /IM AlyxCommunication.exe",
+                    Arguments = $"/F /IM NSploit_Interface.exe",
                     CreateNoWindow = true,
                     UseShellExecute = false
                 }
