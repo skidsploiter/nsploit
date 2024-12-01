@@ -30,7 +30,7 @@ Join our discord server - https://discord.gg/6JPmQa4S7a or message `kz0x1`, `.iu
 > If you do not follow the instructions above, **the n-sploit team can dmca takedown your software.**
 
 Thank you, - **N-Sploit Developers.**
-- [@kz0x1](https://github.com/kz0x1)
+- [@skidsploiter](https://github.com/skidsploiter)
 - [@iusethisLol](https://github.com/iusethisLol)
 - [@razapi](https://github.com/razapi)
 - @scr.ipter on Discord
