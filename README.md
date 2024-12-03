@@ -33,5 +33,5 @@ Thank you, - **N-Sploit Developers.**
 - [@skidsploiter](https://github.com/skidsploiter)
 - [@iusethisLol](https://github.com/iusethisLol)
 - [@razapi](https://github.com/razapi)
+- [@insalad](https://github.com/insalad) (insaladarel on Discord)
 - @scr.ipter on Discord
-- @insaladarel on Discord
