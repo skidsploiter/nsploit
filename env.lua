@@ -435,7 +435,7 @@ end)
 check("getaffiliateid", function()
     return "moREnc"
 end, function()
-    assert(.getaffiliateid() == "moREnc", "getaffiliateid function test failed")
+    assert(getaffiliateid() == "moREnc", "getaffiliateid function test failed")
 end)
 
 check("getplayer", function(name: string)
@@ -559,3 +559,4 @@ while i < 100 do
 	print(i)
 	task.wait(0.1)
 	i = i + 1
+end
