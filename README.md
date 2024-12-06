@@ -5,6 +5,9 @@
 
 # Source has moved to GoFile
 Since github is absolute shit, I decided to move to gofile. (Yowza, that's a lot of files! Try uploading less than 100 at a time).
+>[!WARNING]
+>Outdated source. Extremely bugged and not working.
+
 ## [N-Sploit v3.1.1 Source Code](https://gofile.io/d/PJFTUy)
 
 ### ENV is now open-sourced too!
