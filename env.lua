@@ -10,34 +10,8 @@
 --[[
 CURRENT: ENV Version 14
 ]]
--- Made for N-Sploit Version 3.1
-function getver() return '3.1' end
-
-local remoteVersion = game:HttpGet("https://raw.githubusercontent.com/skidsploiter/nsploit/refs/heads/main/ver.txt")
-
-if getver() ~= remoteVersion then
-    warn("[ N-Sploit ] Not Up-to-date, updating...")
-    local success, err = pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/skidsploiter/nsploit/refs/heads/main/env.lua"))()
-    end)
-    if success then
-        print("✅ Successfully updated.")
-	game:GetService("StarterGui"):SetCore("SendNotification",{
-		Title = "N-Sploit", -- Required
-		Text = "Updated ENV Successfully!", -- Required
-		Icon = "" -- Optional
-	})
-    else
-        warn("❌ Failed to update: " .. err)
-	game:GetService("StarterGui"):SetCore("SendNotification",{
-		Title = "N-Sploit", -- Required
-		Text = "Unable to update ENV, check console for details.", -- Required
-		Icon = "" -- Optional
-	})
-    end
-end
-
-
+-- Made for N-Sploit Version 3.1.3
+function getver() return '3.1.3' end
 
 function identifyexecutor() return 'N-Sploit', getver() end
 --[[
