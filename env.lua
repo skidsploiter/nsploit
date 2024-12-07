@@ -526,3 +526,5 @@ end)
 check("setrbxclipboard", function()
     setrbxclipboard = setclipboard
 end)
+
+print("[ N-Sploit ENV ] Script successfully executed!")
