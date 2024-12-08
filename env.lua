@@ -31,11 +31,7 @@ function checkcaller() -- thanks to raz for this
         return false 
     end
     if info.source == "=[C]" then
-        return false  -- because it's checking for internal C checks that sometimes bug out the ENV
-		      -- no that's usually apart of the debug.getinfo part
-		      --it's needed
-                      --like
-                      --HEAVILY HEAVILY needed -raz
+        return false  -- because it's checking for internal C checks that sometimes bug out the ENV, needed very much
     end
 
     return true 
