@@ -8,9 +8,9 @@
 ]]
 
 --[[
-CURRENT: ENV Version 14
+CURRENT: ENV Version 15
 ]]
--- Made for N-Sploit Version 3.1.3
+-- Made for N-Sploit
 
 local Workspace = game:FindService("Workspace") or game.Workspace
 local RobloxWorkspace = game:FindService("Workspace") or game.Workspace
