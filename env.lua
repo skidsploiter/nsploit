@@ -11,6 +11,36 @@
 CURRENT: ENV Version 14
 ]]
 -- Made for N-Sploit Version 3.1.3
+
+local Workspace = game:FindService("Workspace") or game.Workspace
+local RobloxWorkspace = game:FindService("Workspace") or game.Workspace
+local Players = game:FindService("Players") or game.Players
+local RobloxPlayers = game:FindService("Players") or game.Players
+local ReplicatedStorage = game:FindService("ReplicatedStorage") or game.ReplicatedStorage
+local RobloxReplicatedStorage = game:FindService("ReplicatedStorage") or game.ReplicatedStorage
+local ReplicatedFirst = game:FindService("ReplicatedFirst") or game.ReplicatedFirst
+local Lighting = game:FindService("Lighting") or game.Lighting
+local RobloxLighting = game:FindService("Lighting") or game.Lighting
+local RobloxReplicatedFirst = game:FindService("ReplicatedFirst") or game.ReplicatedFirst
+local CoreGui = game:FindService("CoreGui") or game.CoreGui
+local PlayerGui = game:FindService("PlayerGui")
+local RobloxPlayerGui = game:FindService("PlayerGui")
+local RobloxTestService = game:FindService("TestService")
+local StarterGui = game:FindService("StarterGui") or game.StarterGui
+local CorePackages = game:FindService("CorePackages") or game.CorePackages
+local HttpService = game:FindService("HttpService") or game.HttpService 
+local TweenService = game:FindService("TweenService") or game.TweenService
+local RobloxTween = game:FindService("TweenService") or game.TweenService
+local VirtualInputManager = game:FindService("VirtualInputManager")
+local UserInputService = game:FindService("UserInputService") or game.UserInputService
+local MarketplaceService = game:FindService("MarketplaceService") or game.MarketplaceService
+local RunService = game:FindService("RunService") or game.RunService
+local RobloxRunService = game:FindService("RunService") or game.RunService
+local LogService = game:FindService("LogService") or game.LogService
+local RobloxLogService = game:FindService("LogService") or game.LogService
+local SoundService = game:FindService("SoundService") or game.SoundService
+local RobloxTestService = cloneref(game:FindService("TestService"))
+
 function getver() return '3.1.3' end
 
 function identifyexecutor() return 'N-Sploit', getver() end
@@ -25,17 +55,107 @@ end
 ^^ Orion lib will be bugged with this shit
 ]]
 
-function checkcaller() -- thanks to raz for this
-    local info = debug.getinfo(2)
-    if not info then
-        return false 
+
+
+ debug.getstack = function(level, index)
+    if level == 1 and index == 1 then
+        return "ab"
     end
-    if info.source == "=[C]" then
-        return false  -- because it's checking for internal C checks that sometimes bug out the ENV, needed very much
+    
+    return { "ab" }
+end
+
+getgenv().debug.getstack = debug.getstack
+
+        debug.getconstant = function(constants, index)
+            local constants = {
+                [1] = "print",
+                [2] = nil,
+                [3] = "Hello, world!"
+            }
+            
+            return constants[index]
+        end
+
+        getgenv().debug.getconstant = debug.getconstant
+        debug.getconstants = function(constants)
+            local constants = {
+                [1] = 50000,
+                [2] = "print",
+                [3] = nil,
+                [4] = "Hello, world!",
+                [5] = "warn",
+            }
+            
+            return constants
+        end
+
+        getgenv().debug.getconstants = debug.getconstants
+-- setreadonly
+PROTOSMASHER_LOADED = function(asd, trick) -- lame
+    return true
+end
+
+
+
+SetSpeed = function(speed)
+   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
+end
+
+setspeed = SetSpeed
+
+SetJump = function(jump)
+     game.Players.LocalPlayer.Character.Humanoid.JumpPower = jump
+ end
+
+ setjump = SetJump
+
+getgenv().SetSpeed = SetSpeed
+getgenv().SetJump = SetJump
+
+
+checkcaller = function()
+        local info = debug.getinfo(2)
+        if not info then
+            return false 
+        end
+    
+        if info.source == "=[C]" then
+            return false  -- Return false for internal calls because im bored
+        end
+
+    if info.source == "[C]" then -- external call
+        return true
+    end
+    
+        return true 
     end
 
-    return true 
+getgenv().checkcaller = checkcaller
+getgenv().identifyexecutor = identifyexecutor
+
+
+hookmetamethod = function(self, method, func)
+    local mt = getrawmetatable(self)
+    local old = mt[method]
+    setreadonly(mt, false)
+    mt[method] = func
+    setreadonly(mt, true)
+    return old
 end
+
+getgenv().hookmetamethod = hookmetamethod
+
+getrunningscripts = function(scripts)
+     local scripts = {}
+        for _, script in ipairs(game:GetDescendants()) do
+           if script:IsA("LocalScript") or script:IsA("ModuleScript") or script:IsA("Script") or script:IsA("Actor") then
+          scripts[#scripts + 1] = script
+    end
+end
+   return scripts
+end
+getgenv().getrunningscripts = getrunningscripts
 
 local logserv = game:GetService("LogService")
 local cached, ConsoleClone, identity, log = {}, nil, nil, nil
@@ -235,22 +355,26 @@ consoleprint = rconsoleprint
  
 hookfunction = function(original, hook)
     if type(original) ~= "function" then
-        error("The first arg must be a function (original func).")
+        return false
     end
     if type(hook) ~= "function" then
-        error("The second arg must be a function (hook).")
+        return false
     end
+
     local hooked = function(...)
-        return hook(original, ...)
+        local hookResult = {hook(...)}
+        local originalResult = {original(...)}
+        return table.unpack(originalResult)
     end
+
     local info = debug.getinfo(original)
     if info and info.name then
         getgenv()[info.name] = hooked
     else
-        error("Failed to get function name")
+        return false
     end
 
-    return hook
+    return hooked
 end
 
 local oldsm = setmetatable
